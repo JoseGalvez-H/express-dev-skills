@@ -4,15 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Express Dev Skills</title>
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
-    <p>Welcome to <%= title %>
-    </p>
+    <a href="/">Home</a>
+    <h1>Dev Skills</h1>
+    <ul>
+        <% skills.forEach(function(t) { %>
+            <li>
+                <a href="/skills/<%= t.id %>"><%= t.skill %> </a>
+                    -
+                    <%= t.done ? 'done' : 'not done' %>
+            </li>
+            <% }); %>
+    </ul>
 </body>
+
 
 </html>
